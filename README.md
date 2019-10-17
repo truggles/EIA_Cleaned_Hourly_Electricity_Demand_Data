@@ -22,7 +22,7 @@ Original hourly demand data is collected from electric balancing authorities
 by the U.S. Energy Information Administration (EIA) via Form-930.
 Raw data is made available to the public through the EIA Open Data portal documented here:
 
-<https://www.eia.gov/opendata/register.php>
+<https://www.eia.gov/opendata/>
 
 The specific hourly demand data used is originally located here:
 
@@ -53,7 +53,7 @@ U.S.
 
 ### Balancing Authority Level Data
 The most granular results are for the 56 balancing authorities in this
-directory:
+[directory](https://github.com/truggles/EIA_Cleaned_Hourly_Electricity_Demand_Data/tree/master/data/release_2019_Oct/balancing_authorities "balancing_authorities"):
 
 `data/release_2019_Oct/balancing_authorities/`
 
@@ -76,7 +76,7 @@ We provide regional aggregates corresponding to this mapping.
 The regional files only contain the `Cleaned Demand (MW)` value for each hour.
 This is because, in all cases, the cleaning is done at the BA level.
 Therefore, the other three values would be difficult to interpret in cases where any values are `NA` or missing.
-The regional data is in this directory:
+The regional data is in this [directory](https://github.com/truggles/EIA_Cleaned_Hourly_Electricity_Demand_Data/tree/master/data/release_2019_Oct/regions "regions"):
 
 `data/release_2019_Oct/regions/`
 
@@ -84,13 +84,13 @@ The regional data is in this directory:
 There are three interconnects in the contiguous U.S. electric grid, <https://www.eia.gov/todayinenergy/detail.php?id=27152>.
 Similar to the regional data files, we aggregate the BA level results into the three interconnects as well.
 *NOTE:* the contributions from Mexico and Canada are *NOT* included in these interconnect files.
-The interconnect data is in this directory:
+The interconnect data is in this [directory](https://github.com/truggles/EIA_Cleaned_Hourly_Electricity_Demand_Data/tree/master/data/release_2019_Oct/interconnects "interconnects"):
 
 `data/release_2019_Oct/interconnects/`
 
 ### Contiguous U.S. Data
 All 54 BAs (excludes SEC and OVEC as discussed above) are aggregated to create a
-contiguous U.S. total. Please see this directory:
+contiguous U.S. total. Please see this [directory](https://github.com/truggles/EIA_Cleaned_Hourly_Electricity_Demand_Data/tree/master/data/release_2019_Oct/contiguous_US "contiguous_US"):
 
 `data/release_2019_Oct/contiguous_US/`
 
