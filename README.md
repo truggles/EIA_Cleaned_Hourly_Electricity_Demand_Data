@@ -1,20 +1,109 @@
 # EIA_Cleaned_Hourly_Electricity_Demand_Data
 A repository for publishing and versionsing cleaned EIA hourly demand data
 
+
+
+## Overview and Citation
+The raw data queried from EIA originally show about 2.2% of hourly values are missing.
+The data cleaning process consists of flagging anomalous demand values which
+are about 0.5% of the total data.
+We then impute missing demand values as well as the values flagged as anomalous.
+
+Please cite
+
+XXX
+
+discussing the data cleaning process used to create these final data sets.
+
+
+
 ## Original Data Source
 Original hourly demand data is collected from electric balancing authorities
 by the U.S. Energy Information Administration (EIA) via Form-930.
 Raw data is made available to the public through the EIA Open Data portal documented here:
 
-https://www.eia.gov/opendata/register.php
+<https://www.eia.gov/opendata/register.php>
 
 The specific hourly demand data used is originally located here:
 
-https://www.eia.gov/opendata/qb.php?category=2122628
+<https://www.eia.gov/opendata/qb.php?category=2122628>
+
+At the end of this README is a lists the 67 balancing authorities
+in the contiguous U.S. Demand data is provided for the 
+56 balancing authorities which have demand. The 11 balancing authorities
+which are generation only are denoted as such.
+
+The EIA began collecting hourly demand data in July of 2015 and continuously
+publishes new values each day.
+
+The reported demand value for each hour corresponds to the integrated mean value in megawatts over the previous hour.
+
+
+
+## Available Cleaned Data
+The final data product is available to everyone. As the hourly demand data
+is a continuously growing data record in the EIA database, we plan to update
+this repository with new cleaned data every 6 months.
+
+Data is stored in csv format.
+
+The data can be accessed at different levels of geographic granularity
+ranging from the most granular balancing authority level to the contiguous
+U.S.
+
+### Balancing Authority Level Data
+The most granular results are for the 56 balancing authorities in this
+directory:
+
+`data/release_2019_Oct/balancing_authorities/`
+
+At the balancing authority level, there are 4 values associated with
+each hourly interval.
+
+  * `Raw Demand (MW)` - the raw demand values as queried from EIA, missing values are filled with `NA`
+  * `Forecasted Demand (MW)` - the day ahead value forecasted by the balancing authority returned from the EIA database. These values are *NOT* used anywhere in the cleaning process, but are kept for others as a reference
+  * `Classification` - the classification of each hourly `Raw Demand (MW)` value via the anomaly screening process
+  * `Cleaned Demand (MW)` - cleaned demand values with missing and anomalous values replaced by imputed values
+
+Two of the balancing authorities, SEC and OVEC, have significant
+enough reporting problems that we do not impute cleaned data for them.
+For these two balancing authorities, the `Classification` and `Cleaned Demand (MW)`
+columns are filled with `NA` values.
+
+### Regional Level Data
+Included in the table at the bottom of this README is the mapping of each BA to 13 geographic regions.
+We provide regional aggregates corresponding to this mapping.
+The regional files only contain the `Cleaned Demand (MW)` value for each hour.
+This is because, in all cases, the cleaning is done at the BA level.
+Therefore, the other three values would be difficult to interpret in cases where any values are `NA` or missing.
+The regional data is in this directory:
+
+`data/release_2019_Oct/regions/`
+
+### Interconnects Data
+There are three interconnects in the contiguous U.S. electric grid, <https://www.eia.gov/todayinenergy/detail.php?id=27152>.
+Similar to the regional data files, we aggregate the BA level results into the three interconnects as well.
+*NOTE:* the contributions from Mexico and Canada are *NOT* included in these interconnect files.
+The interconnect data is in this directory:
+
+`data/release_2019_Oct/interconnects/`
+
+### Contiguous U.S. Data
+All 54 BAs (excludes SEC and OVEC as discussed above) are aggregated to create a
+contiguous U.S. total. Please see this directory:
+
+`data/release_2019_Oct/contiguous_US/`
 
 
 
 
+
+
+## Table of Acronyms and Mappings
+This table shows the 67 BAs in the contiguous U.S. as well as their `Code` used to identify their
+files within this repository. For a geographic map, please see:
+
+<https://www.eia.gov/realtime_grid/>
 
 
 | Code | Name | Time Zone | Region | Generation Only |
@@ -39,7 +128,7 @@ https://www.eia.gov/opendata/qb.php?category=2122628
 | FMPP | Florida Municipal Power Pool | Eastern | Florida |    |
 | FPC | Duke Energy Florida, Inc. | Eastern | Florida |    |
 | FPL | Florida Power & Light Co. | Eastern | Florida |    |
-| GCPD | Public Utility District No. 2 of Grant County |  Washington | Pacific | Northwest |    |
+| GCPD | Public Utility District No. 2 of Grant County, Washington | Pacific | Northwest |    |
 | GRID | Gridforce Energy Management, LLC | Pacific | Northwest | Yes |
 | GRIF | Griffith Energy, LLC | Arizona | Southwest | Yes |
 | GRMA | Gila River Power, LLC | Arizona | Southwest | Yes |
