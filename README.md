@@ -4,16 +4,23 @@ A repository for publishing and versionsing cleaned EIA hourly demand data
 
 
 ## Overview and Citation
-The raw data queried from EIA originally show about 2.2% of hourly values are missing.
-The data cleaning process consists of flagging anomalous demand values which
-are about 0.5% of the total data.
-We then impute missing demand values as well as the values flagged as anomalous.
+The raw hourly electricity demand data queried from the 
+U.S. Energy Information Administration (EIA) show 2.2% of hourly values are missing.
+We have developed a data cleaning process that consists of flagging anomalous demand values, 
+which constitute about 0.5% of the total data.
+We impute missing demand values and the values flagged as anomalous using a
+Multiple Imputation by Chained Equations (MICE) technique.
+The MICE technique provides complete data sets without any extremely anomalous values.
 
 Please cite
 
 XXX
 
-discussing the data cleaning process used to create these final data sets.
+which details the data cleaning process used to create these final data sets.
+
+The raw data were queried from the EIA database on September 10, 2019 and
+spans from their initial data entries on 2015-07-01 05:00:00 UCT to 2019-08-31 23:00:00 UCT.
+The first day of data has been removed because of significant reporting inconsistencies.
 
 
 
@@ -96,6 +103,29 @@ contiguous U.S. total. Please see this [directory](https://github.com/truggles/E
 `data/release_2019_Oct/contiguous_US/`
 
 
+
+
+## Accessing the Data / Repository Checkout
+To checkout the cleaned demand data and create a simple time series distribution
+for your favorite BA (ERCOT in the example) follow these commands if you have previously installed
+the python libraries pandas and matplotlib.
+
+```
+git clone git@github.com:truggles/EIA_Cleaned_Hourly_Electricity_Demand_Data.git
+cd EIA_Cleaned_Hourly_Electricity_Demand_Data
+python -i
+>>> import pandas as pd
+>>> import matplotlib.pyplot as plt
+>>> df = pd.read_csv('data/release_2019_Oct/balancing_authorities/ERCO.csv')
+>>> df['date_time'] = pd.to_datetime(df['date_time'])
+>>> fig, ax = plt.subplots()
+>>> ax.plot(df['date_time'], df['Cleaned Demand (MW)'])
+>>> plt.show()
+>>> fig2, ax2 = plt.subplots()
+>>> ax2.plot(df.loc[1000:1250, 'date_time'], df.loc[1000:1250, 'Cleaned Demand (MW)'])
+>>> plt.show()
+>>> exit()
+```
 
 
 
