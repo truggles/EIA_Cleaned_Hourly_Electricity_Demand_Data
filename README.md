@@ -96,8 +96,14 @@ contiguous U.S. total. Please see this [directory](https://github.com/truggles/E
 `data/release_2019_Oct/contiguous_US/`
 
 
+## The MICE Imputation Process
+We include a directory for people interested in further details of the imputation process.
 
+`data/release_2019_Oct/imputation_details/`
 
+This [directory](https://github.com/truggles/EIA_Cleaned_Hourly_Electricity_Demand_Data/tree/master/data/release_2019_Oct/imputation_details "imputation_details") 
+compresses the two corresponding files into a zip file. These files should only be used by those interested in the details
+of the imputation process. See the README in that directory for more details.
 
 
 ## Table of Acronyms and Mappings
