@@ -45,7 +45,8 @@ The final data product is available to everyone. As the hourly demand data
 is a continuously growing data record in the EIA database, we plan to update
 this repository with new cleaned data every 6 months.
 
-Data is stored in csv format.
+Data is stored in csv format with each row corresponding to an hour of demand information.
+The date/time is recorded in column `data_time` as `YYYYMMDDTHHZ`. The `Z` indicates all times are UCT.
 
 The data can be accessed at different levels of geographic granularity
 ranging from the most granular balancing authority level to the contiguous
