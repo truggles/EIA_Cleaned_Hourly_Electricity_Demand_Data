@@ -4,9 +4,9 @@ A repository for publishing and versionsing cleaned EIA hourly demand data
 
 
 ## Overview and Citation
-The raw hourly electricity demand data queried from the 
+The raw hourly electricity demand data queried from the
 U.S. Energy Information Administration (EIA) show 2.2% of hourly values are missing.
-We have developed a data cleaning process that consists of flagging anomalous demand values, 
+We have developed a data cleaning process that consists of flagging anomalous demand values,
 which constitute about 0.5% of the total data.
 We impute missing demand values and the values flagged as anomalous using a
 Multiple Imputation by Chained Equations (MICE) technique.
@@ -35,13 +35,11 @@ The specific hourly demand data used is originally located here:
 
 <https://www.eia.gov/opendata/qb.php?category=2122628>
 
-At the end of this README is a lists the 67 balancing authorities
-in the contiguous U.S. Demand data is provided for the 
-56 balancing authorities which have demand. The 11 balancing authorities
-which are generation only are denoted as such.
+At the end of this README is a list of the 67 balancing authorities in the contiguous U.S.
+Demand data is provided for the 56 balancing authorities which have demand.
+The 11 balancing authorities that include generation only are denoted as such.
 
-The EIA began collecting hourly demand data in July of 2015 and continuously
-publishes new values each day.
+The EIA began collecting hourly demand data in July of 2015 and continuously publishes new values each day.
 
 The reported demand value for each hour corresponds to the integrated mean value in megawatts over the previous hour.
 
@@ -53,7 +51,7 @@ is a continuously growing data record in the EIA database, we plan to update
 this repository with new cleaned data every 6 months.
 
 Data is stored in csv format with each row corresponding to an hour of demand information.
-The date/time is recorded in column `data_time` as `YYYYMMDDTHHZ`. The `Z` indicates all times are UCT.
+The date/time is recorded in column `data_time` as `YYYYMMDDTHHZ`. The `Z` indicates that all times are UCT.
 
 The data can be accessed at different levels of geographic granularity
 ranging from the most granular balancing authority level to the contiguous
@@ -79,10 +77,10 @@ For these two balancing authorities, the `Classification` and `Cleaned Demand (M
 columns are filled with `NA` values.
 
 ### Regional Level Data
-Included in the table at the bottom of this README is the mapping of each BA to 13 geographic regions.
+Included in the table at the bottom of this README is the mapping of each balancing authority to 13 geographic regions.
 We provide regional aggregates corresponding to this mapping.
 The regional files only contain the `Cleaned Demand (MW)` value for each hour.
-This is because, in all cases, the cleaning is done at the BA level.
+This is because, in all cases, the cleaning is done at the balancing authority level.
 Therefore, the other three values would be difficult to interpret in cases where any values are `NA` or missing.
 The regional data is in this [directory](https://github.com/truggles/EIA_Cleaned_Hourly_Electricity_Demand_Data/tree/master/data/release_2019_Oct/regions "regions"):
 
@@ -90,14 +88,14 @@ The regional data is in this [directory](https://github.com/truggles/EIA_Cleaned
 
 ### Interconnects Data
 There are three interconnects in the contiguous U.S. electric grid, <https://www.eia.gov/todayinenergy/detail.php?id=27152>.
-Similar to the regional data files, we aggregate the BA level results into the three interconnects as well.
+Similar to the regional data files, we aggregate the balancing authority level results into the three interconnects.
 *NOTE:* the contributions from Mexico and Canada are *NOT* included in these interconnect files.
 The interconnect data is in this [directory](https://github.com/truggles/EIA_Cleaned_Hourly_Electricity_Demand_Data/tree/master/data/release_2019_Oct/interconnects "interconnects"):
 
 `data/release_2019_Oct/interconnects/`
 
 ### Contiguous U.S. Data
-All 54 BAs (excludes SEC and OVEC as discussed above) are aggregated to create a
+All 54 balancing authorities (excludes SEC and OVEC as discussed above) are aggregated to create a
 contiguous U.S. total. Please see this [directory](https://github.com/truggles/EIA_Cleaned_Hourly_Electricity_Demand_Data/tree/master/data/release_2019_Oct/contiguous_US "contiguous_US"):
 
 `data/release_2019_Oct/contiguous_US/`
@@ -106,7 +104,7 @@ contiguous U.S. total. Please see this [directory](https://github.com/truggles/E
 
 ## Accessing the Data / Repository Checkout
 To checkout the cleaned demand data and create a simple time series distribution
-for your favorite BA (ERCOT in the example) follow these commands if you have previously installed
+for your favorite balancing authority (ERCOT in the example) follow these commands if you have previously installed
 the python libraries pandas and matplotlib.
 
 ```
@@ -133,14 +131,14 @@ We include a directory for people interested in further details of the imputatio
 
 `data/release_2019_Oct/imputation_details/`
 
-This [directory](https://github.com/truggles/EIA_Cleaned_Hourly_Electricity_Demand_Data/tree/master/data/release_2019_Oct/imputation_details "imputation_details") 
+This [directory](https://github.com/truggles/EIA_Cleaned_Hourly_Electricity_Demand_Data/tree/master/data/release_2019_Oct/imputation_details "imputation_details")
 compresses the two corresponding files into a zip file. These files should only be used by those interested in the details
 of the imputation process. See the README in that directory for more details.
 
 
 
 ## Table of Acronyms and Mappings
-This table shows the 67 BAs in the contiguous U.S. as well as their `Code` used to identify their
+This table shows the 67 balancing authorities in the contiguous U.S. as well as their `Code` used to identify their
 files within this repository. For a geographic map, please see:
 
 <https://www.eia.gov/realtime_grid/>
