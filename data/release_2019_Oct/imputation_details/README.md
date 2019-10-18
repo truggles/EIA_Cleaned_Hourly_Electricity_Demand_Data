@@ -1,11 +1,11 @@
 This directory contains a zip file to cut the size of the two corresponding
-files in half. These files will only be used by researchers interested in the details of the 
+files in half. These files will only be used by researchers interested in the details of the
 MICE imputation method. The two files are:
 
-  * `long_format_16_MICE_chains.csv` containing 56 columns, one for the `date_time` field, then the 54 BAs with imputed results, lastly is `imp_index` ranging from 1-16 denoting which of the 16 chains the row belongs to.
+  * `long_format_16_MICE_chains.csv` containing 56 columns, one for the `date_time` field, then the 54 balancing authorities with imputed results, lastly is `imp_index` ranging from 1-16 denoting which of the 16 chains the row belongs to.
   * `mean_of_16_chains.csv` contains the same 55 columns above except it lacks the `imp_index` field as it is the mean (in log space) of the 16 chains.
 
-The 54 columns with BA acronmys as headers correspond to what is called `Cleaned Demand (MW)`
+The 54 columns with balancing authority acronyms as headers correspond to what is called `Cleaned Demand (MW)`
 throughout the rest of this repository.
 
 Again: The final (mean) imputed demand for each hour is taken after converting all values
