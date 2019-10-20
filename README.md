@@ -115,11 +115,9 @@ python -i
 >>> import matplotlib.pyplot as plt
 >>> df = pd.read_csv('data/release_2019_Oct/balancing_authorities/ERCO.csv')
 >>> df['date_time'] = pd.to_datetime(df['date_time'])
->>> fig, ax = plt.subplots()
->>> ax.plot(df['date_time'], df['Cleaned Demand (MW)'])
->>> plt.show()
->>> fig2, ax2 = plt.subplots()
->>> ax2.plot(df.loc[1000:1250, 'date_time'], df.loc[1000:1250, 'Cleaned Demand (MW)'])
+>>> fig, axs = plt.subplots(2)
+>>> axs[0].plot(df['date_time'], df['Cleaned Demand (MW)'])
+>>> axs[1].plot(df.loc[1000:1250, 'date_time'], df.loc[1000:1250, 'Cleaned Demand (MW)'])
 >>> plt.show()
 >>> exit()
 ```
