@@ -1,7 +1,7 @@
-Included in the table at the bottom of the main README is the mapping of each BA to 13 geographic regions.
+Included in the table at the bottom of the main README is the mapping of each balancing authority to 13 geographic regions.
 We provide regional aggregates corresponding to this mapping.
 The regional files only contain the `Cleaned Demand (MW)` value for each hour.
-This is because, in all cases, the cleaning is done at the BA level.
+This is because, in all cases, the cleaning is done at the balancing authority level.
 Therefore, the other three values would be difficult to interpret in cases where any values are `NA` or missing.
 
 Region to BA mapping:  
@@ -18,7 +18,7 @@ TEX ['ERCO']
 CAL ['BANC', 'CISO', 'IID', 'LDWP', 'TIDC']  
 NW ['AVA', 'AVRN', 'BPAT', 'CHPD', 'DOPD', 'GCPD', 'GRID', 'GWA', 'IPCO', 'NEVP', 'NWMT', 'PACE', 'PACW', 'PGE', 'PSCO', 'PSEI', 'SCL', 'TPWR', 'WACM', 'WAUW', 'WWA']  
 SW ['AZPS', 'DEAA', 'EPE', 'GRIF', 'GRMA', 'HGMA', 'PNM', 'SRP', 'TEPC', 'WALC']  
-  
+
 Full naming if it is not clear above:  
 CENT : Central  
 MIDW : Midwest  
