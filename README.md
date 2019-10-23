@@ -1,6 +1,7 @@
 # EIA_Cleaned_Hourly_Electricity_Demand_Data
 A repository for publishing and versionsing cleaned EIA hourly demand data
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3517197.svg)](https://doi.org/10.5281/zenodo.3517197)
 
 
 ## Overview and Citation
