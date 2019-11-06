@@ -16,7 +16,8 @@ The MICE technique provides complete data sets without any extremely anomalous v
 Until we have a preprint manuscript available, please cite:
 
 ```
-Tyler Ruggles, & David Farnham. (2019). EIA Cleaned Hourly Electricity Demand Data (Version v1.0_23Oct2019) [Data set]. Zenodo. http://doi.org/10.5281/zenodo.3517197
+Tyler Ruggles, & David Farnham. (2019). EIA Cleaned Hourly Electricity Demand Data  
+(Version v1.0_23Oct2019) [Data set]. Zenodo. http://doi.org/10.5281/zenodo.3517197
 ```
 
 which details the data cleaning process used to create these final data sets.
