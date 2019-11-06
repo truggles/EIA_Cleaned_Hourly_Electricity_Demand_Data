@@ -19,7 +19,7 @@ XXX
 which details the data cleaning process used to create these final data sets.
 
 The raw data were queried from the EIA database on September 10, 2019 and
-spans from their initial data entries on 2015-07-01 05:00:00 UCT to 2019-08-31 23:00:00 UCT.
+spans from their initial data entries on 2015-07-01 05:00:00 UTC to 2019-08-31 23:00:00 UTC.
 The first day of data has been removed because of significant reporting inconsistencies.
 
 
@@ -51,7 +51,7 @@ is a continuously growing data record in the EIA database, we plan to update
 this repository with new cleaned data every 6 months.
 
 Data is stored in csv format with each row corresponding to an hour of demand information.
-The date/time is recorded in column `data_time` as `YYYYMMDDTHHZ`. The `Z` indicates that all times are UCT.
+The date/time is recorded in column `data_time` as `YYYYMMDDTHHZ`. The `Z` indicates that all times are UTC.
 
 The data can be accessed at different levels of geographic granularity
 ranging from the most granular balancing authority level to the contiguous
