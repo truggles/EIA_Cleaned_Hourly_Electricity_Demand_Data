@@ -52,7 +52,7 @@ The reported demand value for each hour corresponds to the integrated mean value
 ## Available Cleaned Data
 The final data product is available to everyone. As the hourly demand data
 is a continuously growing data record in the EIA database, we plan to update
-this repository with new cleaned data every 6 months.
+this repository with new cleaned data annually.
 
 Data is stored in csv format with each row corresponding to an hour of demand information.
 The date/time is recorded in column `data_time` as `YYYYMMDDTHHZ`. The `Z` indicates that all times are UTC.
@@ -60,6 +60,9 @@ The date/time is recorded in column `data_time` as `YYYYMMDDTHHZ`. The `Z` indic
 The data can be accessed at different levels of geographic granularity
 ranging from the most granular balancing authority level to the contiguous
 U.S.
+
+For reference, at the balancing authority level, we retain the original 
+raw EIA demand data in the final cleaned product (`Raw Demand (MW)`). See the next section for details.
 
 ### Balancing Authority Level Data
 The most granular results are for the 56 balancing authorities in this
