@@ -15,6 +15,7 @@ License][cc-by].
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
 
 
+
 ## Overview and Citation
 The raw hourly electricity demand data queried from the
 U.S. Energy Information Administration (EIA) show 2.2% of hourly values are missing.
