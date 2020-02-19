@@ -3,6 +3,7 @@ A repository for publishing and versionsing cleaned EIA hourly demand data
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3517197.svg)](https://doi.org/10.5281/zenodo.3517197)
 
+[![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/80x15.png)](https://creativecommons.org/licenses/by/4.0/)
 
 ## Overview and Citation
 The raw hourly electricity demand data queried from the
