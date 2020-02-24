@@ -1,8 +1,7 @@
 Included in the table at the bottom of the main README is the mapping of each balancing authority to 13 geographic regions.
 We provide regional aggregates corresponding to this mapping.
-The regional files only contain the `Cleaned Demand (MW)` value for each hour.
-This is because, in all cases, the cleaning is done at the balancing authority level.
-Therefore, the other three values would be difficult to interpret in cases where any values are `NA` or missing.
+The regional files contain `raw demand (MW)` and `cleaned demand (MW)` values for each hour.
+We replace cases of `MISSING` or `EMPTY` `raw demand (MW)` values with 0 before aggregating.
 
 Region to BA mapping:  
 CENT ['SPA', 'SWPP']  
