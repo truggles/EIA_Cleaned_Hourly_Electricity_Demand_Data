@@ -34,7 +34,7 @@ which details the data cleaning process used to create these final data sets.
 The raw data were queried from the EIA database on September 10, 2019 and
 spans from their initial data entries on 2015-07-01 05:00:00 UTC to 2019-08-31 23:00:00 UTC.
 The first day of data has been removed because of significant reporting inconsistencies.
-The data span exactly 4 years, from 2 July 2015 through 2 July 2019.
+The data span exactly 4 years, from the start of 2 July 2015 through the end of 1 July 2019.
 
 
 
