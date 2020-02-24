@@ -5,30 +5,25 @@ A repository for publishing and versionsing cleaned EIA hourly demand data
 
 [![CC BY 4.0][cc-by-shield]][cc-by]
 
-This work is licensed under a [Creative Commons Attribution 4.0 International
-License][cc-by].
-
-[![CC BY 4.0][cc-by-image]][cc-by]
-
-[cc-by]: http://creativecommons.org/licenses/by/4.0/
-[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
-[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
 
 
 
 ## Overview and Citation
 The raw hourly electricity demand data queried from the
-U.S. Energy Information Administration (EIA) show 2.2% of hourly values are missing.
+U.S. Energy Information Administration (EIA) show 2.2% of hourly values are missing based
+on data queried on 10 September 2019.
 We have developed a data cleaning process that consists of flagging anomalous demand values,
 which constitute about 0.5% of the total data.
 We impute missing demand values and the values flagged as anomalous using a
 Multiple Imputation by Chained Equations (MICE) technique.
 The MICE technique provides complete data sets without any extremely anomalous values.
 
-Until we have a preprint manuscript available, please cite:
+Full documentation of the cleaning process is under review at Scientific Data as of
+24 February 2020. Once published, please cite that work for the process and the
+archived version of this repository for the data:
 
 ```
-Tyler Ruggles, & David Farnham. (2019). EIA Cleaned Hourly Electricity Demand Data  
+Ruggles, Tyler H. & Farnham, David. (2019). EIA Cleaned Hourly Electricity Demand Data  
 (Version v1.0_23Oct2019) [Data set]. Zenodo. http://doi.org/10.5281/zenodo.3517197
 ```
 
@@ -37,6 +32,7 @@ which details the data cleaning process used to create these final data sets.
 The raw data were queried from the EIA database on September 10, 2019 and
 spans from their initial data entries on 2015-07-01 05:00:00 UTC to 2019-08-31 23:00:00 UTC.
 The first day of data has been removed because of significant reporting inconsistencies.
+The data span exactly 4 years, from 2 July 2015 through 2 July 2019.
 
 
 
@@ -59,6 +55,10 @@ The EIA began collecting hourly demand data in July of 2015 and continuously pub
 
 The reported demand value for each hour corresponds to the integrated mean value in megawatts over the previous hour.
 
+### Original Files
+
+The original data from the 10 September 2019 data query is located in directory `data/release_2019_Oct/original_eia_files/`
+and can be used to compare results or analyze other methods of cleaning.
 
 
 ## Available Cleaned Data
@@ -67,17 +67,17 @@ is a continuously growing data record in the EIA database, we plan to update
 this repository with new cleaned data annually.
 
 Data is stored in csv format with each row corresponding to an hour of demand information.
-The date/time is recorded in column `data_time` as `YYYYMMDDTHHZ`. The `Z` indicates that all times are UTC.
+The `date_time` value is stored in UTC time.
 
 The data can be accessed at different levels of geographic granularity
 ranging from the most granular balancing authority level to the contiguous
 U.S.
 
 For reference, at the balancing authority level, we retain the original 
-raw EIA demand data in the final cleaned product (`Raw Demand (MW)`). See the next section for details.
+raw EIA demand data in the final cleaned product (`raw demand (MW)`). See the next section for details.
 
 ### Balancing Authority Level Data
-The most granular results are for the 56 balancing authorities in this
+The most granular results are for the 54 balancing authorities in this
 [directory](https://github.com/truggles/EIA_Cleaned_Hourly_Electricity_Demand_Data/tree/master/data/release_2019_Oct/balancing_authorities "balancing_authorities"):
 
 `data/release_2019_Oct/balancing_authorities/`
@@ -85,22 +85,20 @@ The most granular results are for the 56 balancing authorities in this
 At the balancing authority level, there are 4 values associated with
 each hourly interval.
 
-  * `Raw Demand (MW)` - the raw demand values as queried from EIA, missing values are filled with `MISSING` or `EMPTY`
-  * `Forecasted Demand (MW)` - the day ahead value forecasted by the balancing authority returned from the EIA database. These values are *NOT* used anywhere in the cleaning process, but are kept for others as a reference; similar to above missing values are filled with `MISSING` or `EMPTY`
-  * `Classification` - the classification of each hourly `Raw Demand (MW)` value via the anomaly screening process
-  * `Cleaned Demand (MW)` - cleaned demand values with missing and anomalous values replaced by imputed values
+  * `raw demand (MW)` - the raw demand values as queried from EIA, missing values are filled with `MISSING` or `EMPTY`
+  * `category` - the classification of each hourly `raw demand (MW)` value via the anomaly screening process
+  * `cleaned demand (MW)` - cleaned demand values with missing and anomalous values replaced by imputed values
+  * `forecast demand (MW)` - the day ahead value forecasted by the balancing authority returned from the EIA database. These values are *NOT* used anywhere in the cleaning process, but are kept for others as a reference; similar to above missing values are filled with `MISSING` or `EMPTY`
 
 Two of the balancing authorities, SEC and OVEC, have significant
 enough reporting problems that we do not impute cleaned data for them.
-For these two balancing authorities, the `Classification` and `Cleaned Demand (MW)`
-columns are filled with `NA` values.
+For these two balancing authorities no results file are included.
 
 ### Regional Level Data
 Included in the table at the bottom of this README is the mapping of each balancing authority to 13 geographic regions.
 We provide regional aggregates corresponding to this mapping.
-The regional files only contain the `Cleaned Demand (MW)` value for each hour.
-This is because, in all cases, the cleaning is done at the balancing authority level.
-Therefore, the other three values would be difficult to interpret in cases where any values are `NA` or missing.
+The regional files contain `raw demand (MW)` and `cleaned demand (MW)` values for each hour.
+We replace cases of `MISSING` or `EMPTY` `raw demand (MW)` values with 0 before aggregating.
 The regional data is in this [directory](https://github.com/truggles/EIA_Cleaned_Hourly_Electricity_Demand_Data/tree/master/data/release_2019_Oct/regions "regions"):
 
 `data/release_2019_Oct/regions/`
@@ -135,8 +133,8 @@ python -i
 >>> df = pd.read_csv('data/release_2019_Oct/balancing_authorities/ERCO.csv')
 >>> df['date_time'] = pd.to_datetime(df['date_time'])
 >>> fig, axs = plt.subplots(2)
->>> axs[0].plot(df['date_time'], df['Cleaned Demand (MW)'])
->>> axs[1].plot(df.loc[1000:1250, 'date_time'], df.loc[1000:1250, 'Cleaned Demand (MW)'])
+>>> axs[0].plot(df['date_time'], df['cleaned demand (MW)'])
+>>> axs[1].plot(df.loc[1000:1250, 'date_time'], df.loc[1000:1250, 'cleaned demand (MW)'])
 >>> plt.show()
 >>> exit()
 ```
