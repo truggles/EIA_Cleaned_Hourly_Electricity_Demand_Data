@@ -8,3 +8,6 @@ each hourly interval.
 
 For those interested in reproducing the exact results of our screening and imputation
 algorithms, these are in the input files to use.
+
+Additionally, we include the regional and CONUS (US48) files which were queried simultaneously and illustrate the
+EIA anomaly screening and imputation method.
