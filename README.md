@@ -133,7 +133,7 @@ cd EIA_Cleaned_Hourly_Electricity_Demand_Data
 python -i
 >>> import pandas as pd
 >>> import matplotlib.pyplot as plt
->>> df = pd.read_csv('data/release_2019_Oct/balancing_authorities/ERCO.csv')
+>>> df = pd.read_csv('data/release_2019_Oct/balancing_authorities/ERCO.csv', na_values=['MISSING','EMPTY'])
 >>> df['date_time'] = pd.to_datetime(df['date_time'])
 >>> fig, axs = plt.subplots(2)
 >>> axs[0].plot(df['date_time'], df['cleaned demand (MW)'])
