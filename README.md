@@ -21,16 +21,17 @@ We impute missing demand values and the values flagged as anomalous using a
 Multiple Imputation by Chained Equations (MICE) technique.
 The MICE technique provides complete data sets without any extremely anomalous values.
 
-Full documentation of the cleaning process is under review at Scientific Data as of
-24 February 2020. Once published, please cite that work for the process and the
-archived version of this repository for the data:
+Full documentation of the cleaning process has been published in Scientific Data.
 
-```
-Ruggles, Tyler H. & Farnham, David. (2019). EIA Cleaned Hourly Electricity Demand Data  
-(Version v1.0_23Oct2019) [Data set]. Zenodo. http://doi.org/10.5281/zenodo.3517197
-```
+Please consider citing:
 
-which details the data cleaning process used to create these final data sets.
+Ruggles, T.H., Farnham, D.J., Tong, D. et al. Developing reliable hourly electricity demand data through screening and imputation. Sci Data 7, 155 (2020). https://doi.org/10.1038/s41597-020-0483-x
+
+and the data archive:
+
+Ruggles, Tyler H., & Farnham, David J. (2020). EIA Cleaned Hourly Electricity Demand Data (Version v1.1) [Data set]. Zenodo. http://doi.org/10.5281/zenodo.3690240
+
+
 
 The raw data were queried from the EIA database on September 10, 2019 and
 spans from their initial data entries on 2015-07-01 05:00:00 UTC to 2019-08-31 23:00:00 UTC.
