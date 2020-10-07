@@ -1,0 +1,16 @@
+﻿Classification of hourly values for the 54 BAs from 2015-07-02 00:00:00 to 2020-07-01 23:00:00 inclusive,,
+"For details and to compare with previous results see Table 1 in ""Developing reliable hourly electricity demand data through screening and imputation""",,
+,,
+Classification,Counts,Fraction of total
+OKAY,"2,315,573",0.977946
+MISSING,"42,260",0.017848
+NEG_OR_ZERO,"1,090",0.00046
+GLOBAL_DEM,192,8.10E-05
+GLOBAL_DEM_PLUS_MINUS,310,0.000131
+LOCAL_DEM_UP,368,0.000155
+LOCAL_DEM_DOWN,399,0.000169
+DELTA,"1,355",0.000572
+SINGLE_DELTA,216,9.10E-05
+IDENTICAL_RUN,"4,129",0.001744
+ANOMALOUS_REGION,"1,900",0.000802
+TOTAL,"2,367,792",0.999999
