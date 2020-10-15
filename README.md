@@ -10,6 +10,16 @@ A repository for publishing and versionsing cleaned EIA hourly demand data
 
 Find archived versions of the code used to clean this data: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3678854.svg)](https://doi.org/10.5281/zenodo.3678854)
 
+## Most current data releases
+The cleaned data have been updated since publication of the methods paper (early 2020) 
+discussed throughout this repository. The most current cleaned data can be found 
+in `data/release_2020_Oct/` and corresponds to 5 full years of cleaned data spanning
+from 2 July 2015 through 1 July 2020 and follow the methods discussed in the paper exactly.
+Additionally, we have modified the method to incorporate 
+subregion level data for the balancing authorities that provide this and provide
+2 full years of cleaned data spanning 1 October 2018 through 30 September 2020 in the
+`data/release_2020_Oct_include_subregions/` directory. Details of both updates can be found
+in README files at the paths above. 
 
 ## Overview and Citation
 The raw hourly electricity demand data queried from the
