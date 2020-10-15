@@ -15,7 +15,10 @@
      * TEPC, 1,500 MW, 912
      * NSB, 46 MW, 8,283 
    * NSB reported their last hourly demand value to EIA as 2020-01-08 05:00:00. Thus this 2020 MAPE check for this BA is not relevant. We are publishing the imputation results for NSB as-is. We recommend any user of NSB data discuss 2020 data with the NSB BA directly.
- * Diagnostic figure XXX
+ * Diagnostic figure `large_diagnostic_figure_Oct_8.pdf` provides a visualization of all hourly values that were identified as anomalous throughout the 5 years of data. The figure is composed of three regions. 
+   * 1) each BA has an associated column and the y-axis shows the timestamp, colored circle mark anomalous values. The color key is located at the bottom of the figure. 
+   * 2) above region 1 the cumulative total of anomalous values for each BA (column) is shown split by filtering algorithm.
+   * 3) adjacent to region 1 the cumulative total of anomalous values by filtering algorithm is shown for each timestamp.
 
 # Subdirectory documentation
 
