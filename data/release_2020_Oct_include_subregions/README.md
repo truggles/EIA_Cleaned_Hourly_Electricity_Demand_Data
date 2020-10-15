@@ -21,12 +21,12 @@
    * Electric Reliability Council of Texas, Inc. (ERCO)
      * 2019-05-27 06:00:00
  * Data for all regions and subregions used in this directory were querried on 14 October 2020.
- * We clean 2 full years of demand data by considering data from 1 Oct 2018 through 30 Sept 2020
-   * sub-regional ERCO data are excluded from the imputation process because of their data start date
+ * We clean 2 full years of demand data by considering data from 1 Oct 2018 through 30 Sept 2020 after making the following exclusions:
+   * sub-regional ERCO data are excluded from the imputation process because of their May 2019 data start date.
    * sub-regional PNM data are excluded from the imputation process because most of their subregions are small and yield a very high filtering rate for the `idential_run` filter and the `anomalous_region` filter.
    * a single PJM sub-region (PJM-RECO, https://www.eia.gov/opendata/qb.php?category=3390296&sdid=EBA.PJM-RECO.D.H) is excluded because the last reported value is in April of 2019.
  * The resulting imputation is performed on the 54 BAs minus 'CISO', 'ISNE', 'MISO', 'NYIS', 'PJM', 'SWPP' plus the sub-regions for 'CISO', 'ISNE', 'MISO', 'NYIS', 'PJM', 'SWPP' (excluding the one mentioned PJM subregion). This results in 113 geographic regions represented across 2 years of data.
- * Beyond the replacement of a few BAs with their sub-regions, the methodology remains unchanged for producing this updated set of cleaned demand data
+ * Beyond the replacement of a few BAs with their sub-regions, the methodology remains unchanged for producing this updated set of cleaned demand data.
  * For comparison, we produced versions of the data summary tables that were found in the original paper. These modified tables reveal no substantial changes in performance of the anomaly identification or imputation methods.
    * Table 1: `anomalous_value_summary_subregions.csv`
    * Table 2: `anomalous_value_summary_post-imputation_screening_subregions.csv`
