@@ -20,6 +20,7 @@
      * 2018-08-31 06:00:00
    * Electric Reliability Council of Texas, Inc. (ERCO)
      * 2019-05-27 06:00:00
+ * Data for all regions and subregions used in this directory were querried on 14 October 2020.
  * We clean 2 full years of demand data by considering data from 1 Oct 2018 through 30 Sept 2020
    * sub-regional ERCO data are excluded from the imputation process because of their data start date
    * sub-regional PNM data are excluded from the imputation process because most of their subregions are small and yield a very high filtering rate for the `idential_run` filter and the `anomalous_region` filter.

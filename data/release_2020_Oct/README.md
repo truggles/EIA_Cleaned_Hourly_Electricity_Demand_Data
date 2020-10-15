@@ -2,6 +2,7 @@
 
  * This update adds one additional year of cleaned demand data bringing the total to 5 years
    * Cleaned data ranges from 2015-07-02 00:00:00 UTC to 2020-07-01 23:00:00 inclusive
+   * All data used in this directory were querried on 28 September 2020.
  * Methodology remains unchanged for producing this updated set of cleaned demand data
  * We produced updated versions of the data summary tables that were found in the original paper. These updated tables reveal no substantial changes in performance of the anomaly identification or imputation methods.
    * Table 1: `anomalous_value_summary.csv`
