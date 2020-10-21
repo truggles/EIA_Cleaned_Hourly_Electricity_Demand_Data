@@ -1,5 +1,6 @@
 # October 2020 Release
 
+ * Data in this subfolder queried on 28 Sept 2020.
  * This update adds one additional year of cleaned demand data bringing the total to 5 years
    * Cleaned data ranges from 2015-07-02 00:00:00 UTC to 2020-07-01 23:00:00 inclusive
    * All data used in this directory were querried on 28 September 2020.

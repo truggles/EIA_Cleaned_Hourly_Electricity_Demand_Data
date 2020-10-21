@@ -1,5 +1,6 @@
 # October 2020 Release - with sub-regions
 
+ * Data in this subfolder queried on 14 Oct 2020.
  * The EIA Open Data portal provides sub-balancing authority level hourly demand data for certain BAs: 'CISO', 'ISNE', 'MISO', 'NYIS', 'PJM', 'SWPP', 'ERCO', and 'PNM'.
  * In general data collection at this granularity began in July 2018. The first hour of data for each region is listed here:
    * California Independent System Operator (CISO)
