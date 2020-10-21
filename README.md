@@ -11,7 +11,8 @@ A repository for publishing and versionsing cleaned EIA hourly demand data
 Find archived versions of the code used to clean this data: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3678854.svg)](https://doi.org/10.5281/zenodo.3678854)
 
 ## Most current data releases
-The cleaned data have been updated since publication of the methods paper (early 2020) 
+The cleaned data have been updated since publication of the methods paper (early 2020
+https://doi.org/10.1038/s41597-020-0483-x, see citation below) 
 discussed throughout this repository. The most current cleaned data can be found 
 in `data/release_2020_Oct/` and corresponds to 5 full years of cleaned data spanning
 from 2 July 2015 through 1 July 2020 and follow the methods discussed in the paper exactly.
