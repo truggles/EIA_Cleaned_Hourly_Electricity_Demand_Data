@@ -31,7 +31,7 @@
    * Table 1: `anomalous_value_summary_subregions.csv`
    * Table 2: `anomalous_value_summary_post-imputation_screening_subregions.csv`
    * Table 3: `imputation_results_and_biases_subregions.csv`
-   * These result files show similar performance in comparison with the original 54 BA method in terms of the relative fraction of hourly values originally filtered and the quantity of hours filtered on a second pass.
+   * These result files can be used to compare performance with the original 54 BA cleaning process.
 
 # Subdirectory documentation
 
