@@ -1,4 +1,7 @@
-category,count,Fraction of total
+Classification of hourly values for the 119 BAs and BA subregions from 2020-01-01 00:00:00 to 2024-12-31 23:00:00 inclusive,,
+"For details and to compare with previous results see Table 1 in ""Developing reliable hourly electricity demand data through screening and imputation""",,
+,,
+Classification,Counts,Fraction of total
 OKAY,5144417,0.9859148640299031
 DELTA,1533,0.00029379567919121674
 IDENTICAL_RUN,16729,0.003206071700710936
