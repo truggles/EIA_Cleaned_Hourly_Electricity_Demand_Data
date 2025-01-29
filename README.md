@@ -12,15 +12,23 @@ Find archived versions of the code used to clean this data: [![DOI](https://zeno
 
 ## Most current data releases
 The cleaned data have been updated since publication of the methods paper (early 2020
-https://doi.org/10.1038/s41597-020-0483-x, see citation below) 
-discussed throughout this repository. The most current cleaned data can be found 
+https://doi.org/10.1038/s41597-020-0483-x, see citation below) discussed throughout this repository. 
+
+### 2025 release
+
+The most current cleaned data can be found 
+in `data/release_2025_Jan_include_subregions/` and corresponds to 5 full years of cleaned data spanning
+from 1 Jan 2020 through 1 Jan 2025 and follow the methods discussed in the paper exactly.
+Additionally, it includes subregion level data for the balancing authorities that provide this using the updated methods introduced in the 2020 release. Details of this update can be found in the README file at the path above. 
+
+### 2020 release
+The first update of the cleaned data can be found 
 in `data/release_2020_Oct/` and corresponds to 5 full years of cleaned data spanning
 from 2 July 2015 through 1 July 2020 and follow the methods discussed in the paper exactly.
 Additionally, we have modified the method to incorporate 
 subregion level data for the balancing authorities that provide this and provide
 2 full years of cleaned data spanning 1 October 2018 through 30 September 2020 in the
-`data/release_2020_Oct_include_subregions/` directory. Details of both updates can be found
-in README files at the paths above. 
+`data/release_2020_Oct_include_subregions/` directory. Details of both updates can be found in README files at the paths above.
 
 ## Overview and Citation
 The raw hourly electricity demand data queried from the
@@ -40,7 +48,7 @@ Ruggles, T.H., Farnham, D.J., Tong, D. et al. Developing reliable hourly electri
 
 and the data archive:
 
-Ruggles, Tyler H., & Farnham, David J. (2020). EIA Cleaned Hourly Electricity Demand Data (Version v1.1) [Data set]. Zenodo. http://doi.org/10.5281/zenodo.3690240
+Ruggles, Tyler H., Farnham, David J. & Wongel, Alicia (2025). EIA Cleaned Hourly Electricity Demand Data (Version v1.2) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.3517196
 
 
 
