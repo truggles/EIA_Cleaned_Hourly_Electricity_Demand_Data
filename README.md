@@ -48,7 +48,7 @@ Ruggles, T.H., Farnham, D.J., Tong, D. et al. Developing reliable hourly electri
 
 and the data archive:
 
-Ruggles, Tyler H., Farnham, David J. & Wongel, Alicia (2025). EIA Cleaned Hourly Electricity Demand Data (Version v1.2) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.3517196
+Ruggles, Tyler H., Farnham, David J. & Wongel, Alicia (2025). EIA Cleaned Hourly Electricity Demand Data (Version v1.4) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.3517196
 
 
 
